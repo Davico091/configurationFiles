@@ -1,0 +1,24 @@
+<h:form>
+	<p:growl id="growl" life="2000" />
+		<p:panel id="panel" header="Registro de Usuarios" style="margin-bottom:10px;">
+			<p:messages id="msg" ></p:messages>
+			<h:panelGrid columns="2" cellpadding="5">
+				<h:outputLabel for="usuario" value="Usuario :" />
+				<p:inputText id="usuario" required="true" value="#{mainController.usuario.usuario}"  maxlength="20" requiredMessage="El campo es requerido" />
+
+				<h:outputLabel for="nombre" value="Nombres :" />
+				<p:inputText id="nombre" required="true" value="#{mainController.usuario.nombre}" />
+				
+				<h:outputLabel for="apellidos" value="Apellidos" />
+				<p:inputText id="apellidos" required="true" value="#{mainController.usuario.apellidos}"/>
+				
+				<h:outputLabel for="fechaNac" value="Fecha de nacimiento" />
+				<p:calendar id="fechaNac" required="true" value="#{mainController.usuario.fechaNac}"  pattern="yyyy-MM-dd" >
+				 
+				</p:calendar>				
+			</h:panelGrid>
+		</p:panel>
+		
+		<p:commandButton value="Enviar"
+			action="#{mainController.registrarUsuario()}" update="msg"/>
+	</h:form>

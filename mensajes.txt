@@ -1,0 +1,10 @@
+para agregar mensajes desde el controllador
+
+FacesMessage msg =null;
+msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "titulo",
+					"descipcion del mensaje");
+FacesContext.getCurrentInstance().addMessage(null, msg);
+
+para esto es importante que en la pagina xhtml 
+haya un growl y este siendo actualizado desde un commandbutton por su respectivo id
+

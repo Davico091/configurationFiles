@@ -1,0 +1,13 @@
+private static SessionFactory sessionFactory;
+	private static ServiceRegistry serviceRegistry;
+
+	static {
+		Configuration configuration = new Configuration().configure();
+		serviceRegistry = new ServiceRegistryBuilder().applySettings(
+				configuration.getProperties()).buildServiceRegistry();
+		sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+	}
+
+	public static SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}

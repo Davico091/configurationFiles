@@ -1,0 +1,14 @@
+para registros
+
+	Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.save(usuario);
+		session.getTransaction().commit();
+		session.close();
+
+para consultas
+
+Session session = HibernateUtil.getSessionFactory().openSession();
+		usuarios= (List<Usuario>) session.createQuery("from usuario").list();
+		session.close();
+

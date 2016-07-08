@@ -1,0 +1,16 @@
+	public static String parseDate(String input){
+		
+		SimpleDateFormat sdf = new SimpleDateFormat(
+	            "EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+	Date parsedDate = null;
+	String dateFormated =null;
+	try {
+	    parsedDate = sdf.parse(input);
+	    System.out.println(parsedDate);
+	    SimpleDateFormat sdf2 = new SimpleDateFormat("YYYY-MM-dd");
+	    dateFormated =sdf2.format(parsedDate);
+	} catch (ParseException e) {
+	    e.printStackTrace();
+	}
+		return dateFormated;
+	}

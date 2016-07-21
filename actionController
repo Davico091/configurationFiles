@@ -1,0 +1,34 @@
+package com.mpd1.action;
+
+import org.hibernate.Session;
+
+import com.mpd1.bean.Usuario;
+import com.mpd1.util.HibernateUtil;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MainAction extends ActionSupport{
+	private Usuario usuario;
+	public String holaMundo(){
+		System.out.println("hola mundo  "+usuario.toString());
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.save(usuario);
+		session.getTransaction().commit();
+		session.close();
+		
+		return SUCCESS;
+	}
+	
+	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
+	
+}

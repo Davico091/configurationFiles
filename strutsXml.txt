@@ -5,9 +5,8 @@
 <!--   <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" /> -->
    <constant name="struts.devMode" value="true" />
    <package name="base" extends="struts-default">
-      	<action name="hello" class="com.david.struts.integracion.action.MainAction" method="greet">
+      	<action name="formMethod" class="com.mpd1.action.MainAction" method="holaMundo">
 			<result name="success">/siguiente.jsp</result>
 	</action>   
    </package>   	
 </struts>
-
